@@ -1,0 +1,53 @@
+// Define the Chess5x5 game board as a 2D array of characters
+type Chess5x5Board = [[char]];
+
+// Initialize the Chess5x5 game board
+func initChess5x5Board(): Chess5x5Board {
+  return [
+    ['R', 'N', 'B', 'Q', 'K'],
+    ['R', 'N', 'B', 'Q', 'K'],
+    ['W', 'W', 'W', 'W', 'W'],
+    ['_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_'],
+    ['w', 'w', 'w', 'w', 'w'],
+    ['r', 'n', 'b', 'q', 'k'],
+    ['r', 'n', 'b', 'q', 'k']
+  ];
+}
+
+// Define the available special pieces
+type SpecialPiece = {
+  id: Text,
+  name: Text,
+  moveType: Text
+};
+
+// Initialize the special pieces
+func initSpecialPieces(): [SpecialPiece] {
+  return [
+    { id: "dragon", name: "Dragon", moveType: "queen" },
+    { id: "jumper", name: "Jumper", moveType: "knight" },
+    { id: "cannon", name: "Cannon", moveType: "cannon" },
+    { id: "archer", name: "Archer", moveType: "archer" },
+    { id: "ninja", name: "Ninja", moveType: "ninja" },
+    { id: "engineer", name: "Engineer", moveType: "engineer" },
+    { id: "teleporter", name: "Teleporter", moveType: "queen" },
+    { id: "wizard", name: "Wizard", moveType: "wizard" },
+    { id: "siren", name: "Siren", moveType: "siren" },
+    { id: "dasher", name: "Dasher", moveType: "dasher" },
+    { id: "alchemist", name: "Alchemist", moveType: "alchemist" },
+    { id: "leaper", name: "Leaper", moveType: "leaper" },
+    { id: "mimic", name: "Mimic", moveType: "mimic" },
+    { id: "ghost", name: "Ghost", moveType: "ghost" },
+    { id: "jester", name: "Jester", moveType: "jester" }
+  ];
+}
+
+// Define the main Chess5x5 game structure
+actor Chess5x5Game {
+  stable var board : Chess5x5Board = initChess5x5Board();
+  stable var specialPieces : [SpecialPiece] = initSpecialPieces();
+  // Add additional game logic here...
+}
